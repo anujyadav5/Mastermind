@@ -28,10 +28,11 @@ class Game
       for i in (0..3) do
         if @guess[i] == @code[i]
           @hint.concat(['x'])
+          @partial_mathces.delete_at(i)
         end
       end
-      @partial_mathces.each do |num|
-        @hint.concat(['o']) if @code.include?(num)
+      for i in @code.intersection(@partial_mathces) do
+        @hint.concat(['o'])
       end
 
       puts "Feedback: #{Print.display(@hint.sort.reverse)}"
