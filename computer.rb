@@ -1,7 +1,9 @@
 class Computer
-  attr_reader :code, :guess
+  attr_reader :code, :guess, :name
 
-  def initialize; end
+  def initialize
+    @name = "the computer"  
+  end
 
   def make_code
     @code = [rand(1..6), rand(1..6), rand(1..6), rand(1..6)]

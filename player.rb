@@ -15,18 +15,18 @@ class Player
       puts "Your code must be 4digits between 1 and 6 (ex. 1234, 6225)"
       @code = gets.chomp
     end
-    @code = @code.to_s.split('')
+    @code = @code.to_s.split('').map(&:to_i)
   end
 
   def guess_code
     puts "Enter a guess (4digits between 1 and 6): "
     @guess = gets.chomp
 
-    until @guess =~ /[1-6]{4}/ do
+    until @guess =~ /\b[1-6]{4}\b/ do
       puts "Guess must be 4digits between 1 and 6 (ex. 1234, 6225)"
       @guess = gets.chomp
     end
-    @guess = @guess.to_s.split('')
+    @guess = @guess.to_s.split('').map(&:to_i)
   end
 
 end

@@ -13,7 +13,7 @@ class String
   end
 
   def yellow
-    colorize(43)
+    colorize(103)
   end
 
   def blue
@@ -26,6 +26,14 @@ class String
 
   def light_blue
     colorize(46)
+  end
+
+  def light_green
+    colorize(102)
+  end
+
+  def brown
+    colorize(43)
   end
 
 end
